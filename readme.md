@@ -1,17 +1,10 @@
 <html lang="en">
 <style>
-html, body {
-    height: 100%;
-}
-
-html {
-    display: table;
-    margin: auto;
-}
 
 body {
-    display: table-cell;
     vertical-align: middle;
+    width: 100%; height: 100%;
+    margin: auto;
 }
 </style>
 <header>
