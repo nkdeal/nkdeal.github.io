@@ -49,17 +49,24 @@
 
     .category-image {
       width: calc(100% + 56px);
-      height: 155px;
-      margin: -28px -28px 30px;
+      height: 190px;
+      margin: -28px -28px 0;
       overflow: hidden;
-      background: #eeeae1;
+      background: #f5f3ee;
       position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .category-image::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(13,61,53,0) 55%, rgba(13,61,53,.10));
+      background: linear-gradient(
+        180deg,
+        rgba(255,255,255,0) 68%,
+        rgba(13,61,53,.055) 100%
+      );
       pointer-events: none;
     }
     .category-image img {
@@ -67,14 +74,22 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center;
       transition: transform .45s ease;
     }
     .category-card:hover .category-image img {
-      transform: scale(1.035);
+      transform: scale(1.025);
     }
+
+    @media (max-width: 900px) {
+      .category-image {
+        height: 180px;
+      }
+    }
+
     @media (max-width: 600px) {
       .category-image {
-        height: 175px;
+        height: 200px;
       }
     }
     .categories .category-card {
@@ -166,7 +181,7 @@
           </article>
           <article class="category-card">
             <span class="category-number">02</span>
-            <div class="category-image"><img src="/img/categories/rice.jpg" alt="Persian rice and grains"></div>
+            <div class="category-image"><img src="/img/categories/rice.jpg" alt="Basmati rice and grains"></div>
             <h3>Rice & Grains</h3>
             <p>Persian rice, basmati, bulgur, freekeh, lentils and other pantry staples.</p>
           </article>
@@ -178,19 +193,19 @@
           </article>
           <article class="category-card">
             <span class="category-number">04</span>
-            <div class="category-image"><img src="/img/categories/nuts.jpg" alt="Pistachios and nuts"></div>
+            <div class="category-image"><img src="/img/categories/nuts.jpg" alt="Pistachios and almonds"></div>
             <h3>Nuts & Seeds</h3>
             <p>Pistachios, almonds, sesame, seeds and bulk specialty nut products.</p>
           </article>
           <article class="category-card">
             <span class="category-number">05</span>
-            <div class="category-image"><img src="/img/categories/oils.jpg" alt="Middle Eastern olive oil"></div>
+            <div class="category-image"><img src="/img/categories/oils.jpg" alt="Tahini and Middle Eastern condiments"></div>
             <h3>Oils & Condiments</h3>
             <p>Olive oils, cooking oils, tahini, molasses, vinegars and sauces.</p>
           </article>
           <article class="category-card">
             <span class="category-number">06</span>
-            <div class="category-image"><img src="/img/categories/sweets.jpg" alt="Persian sweets and snacks"></div>
+            <div class="category-image"><img src="/img/categories/sweets.jpg" alt="Persian sweets"></div>
             <h3>Sweets & Beverages</h3>
             <p>Sohan, rock candy, teas, juices, fruit drinks, specialty waters and snacks.</p>
           </article>
@@ -256,3 +271,16 @@
   </script>
 </body>
 </html>
+
+<style>
+  .categories .category-card {
+    padding: 28px 30px 30px;
+  }
+  .categories .category-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  .categories .category-card p {
+    margin-bottom: 0;
+  }
+</style>
