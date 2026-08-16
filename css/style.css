@@ -208,3 +208,23 @@ h2 { font-size: clamp(40px, 5vw, 62px); line-height: 1.02; margin: 20px 0 0; fon
   .catalog-frame iframe { height: 68vh; min-height: 480px; }
   .catalog-note { font-size: 11px; }
 }
+
+
+/* Readability fix: category cards must use dark text on the light cards. */
+.categories .category-grid .category-card h3 {
+  color: var(--green) !important;
+  opacity: 1 !important;
+}
+
+.categories .category-grid .category-card p {
+  color: var(--ink-soft) !important;
+  opacity: 1 !important;
+}
+
+.categories .category-grid .category-card .category-number {
+  color: #7b8782 !important;
+}
+
+.categories .category-grid .category-card .category-icon {
+  color: var(--gold) !important;
+}
