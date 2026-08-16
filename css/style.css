@@ -187,6 +187,7 @@ h2 { font-size: clamp(40px, 5vw, 62px); line-height: 1.02; margin: 20px 0 0; fon
 .catalog-front { padding: 72px 0 86px; }
 .catalog-intro { text-align: center; max-width: 900px; margin: 0 auto 42px; }
 .catalog-intro h1 { font-family: Manrope, sans-serif; font-size: clamp(44px, 6vw, 78px); line-height: .98; letter-spacing: -.05em; margin: 22px 0 14px; font-weight: 800; }
+.catalog-intro h1 span { display: block; }
 .catalog-intro h1 em { color: var(--gold); font-style: normal; }
 .catalog-intro p { margin: 0 0 24px; color: rgba(255,255,255,.7); font-size: 17px; }
 .catalog-intro .button { margin-top: 2px; }
