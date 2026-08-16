@@ -11,6 +11,32 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css?v=6">
   <style>
+
+    .catalog-frame {
+      width: 100%;
+      padding: 0;
+      overflow: hidden;
+    }
+    .catalog-frame iframe {
+      display: block;
+      width: 100%;
+      height: min(88vh, 1000px);
+      min-height: 700px;
+      margin: 0;
+      border: 0;
+    }
+    @media (max-width: 900px) {
+      .catalog-frame iframe {
+        height: 78vh;
+        min-height: 600px;
+      }
+    }
+    @media (max-width: 600px) {
+      .catalog-frame iframe {
+        height: 72vh;
+        min-height: 500px;
+      }
+    }
     .categories .category-card {
       color: #14211d !important;
     }
