@@ -27,7 +27,7 @@ a { color: inherit; text-decoration: none; }
 .nav-cta { background: var(--green); color: white; padding: 13px 20px; border-radius: 999px; font-size: 13px; font-weight: 700; }
 
 .hero { position: relative; overflow: hidden; color: white; background: var(--green); padding: 104px 0 34px; min-height: 690px; }
-.hero:before { content: ''; position: absolute; inset: 0; opacity: .08; background-image: linear-gradient(120deg, transparent 0 46%, #fff 46.2% 46.5%, transparent 46.7% 100%); background-size: 180px 180px; }
+.hero:before { content: ''; position: absolute; inset: 0; opacity: .75; background-image: repeating-linear-gradient(135deg, rgba(255,255,255,.045) 0 1px, transparent 1px 28px), repeating-linear-gradient(45deg, rgba(255,255,255,.035) 0 1px, transparent 1px 28px); }
 .hero-glow { position: absolute; border-radius: 50%; filter: blur(3px); pointer-events: none; }
 .hero-glow-one { width: 520px; height: 520px; right: -180px; top: -170px; background: rgba(214,154,45,.13); }
 .hero-glow-two { width: 300px; height: 300px; left: -180px; bottom: -170px; background: rgba(255,255,255,.05); }
@@ -107,7 +107,23 @@ h2 { font-size: clamp(40px, 5vw, 62px); line-height: 1.02; margin: 20px 0 0; fon
 .category-card p { margin: 0; font-size: 13px; line-height: 1.65; color: #53615b; max-width: 300px; }
 .featured p { color: var(--ink-soft); }
 
-.catalog-section { padding: 115px 0; background: var(--green); color: white; }
+.catalog-section {
+  padding: 115px 0;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  color: white;
+  background-color: #0d3d35;
+  background-image: url('../img/catalog-pattern.png');
+  background-repeat: repeat;
+  background-position: top left;
+  background-size: 635px 447px;
+}
+.catalog-section::before,
+.catalog-section::after {
+  content: none;
+}
+.catalog-section > .container { position: relative; z-index: 1; }
 .catalog-head { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 35px; }
 .catalog-head h2 { margin-top: 18px; }
 .catalog-frame { background: #1b2522; border: 1px solid rgba(255,255,255,.12); padding: 8px; box-shadow: 0 30px 80px rgba(0,0,0,.25); }
