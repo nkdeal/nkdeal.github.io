@@ -50,19 +50,24 @@
       .catalog-frame {
         width: 100%;
         max-width: 100%;
+        height: 32vh;
+        min-height: 280px;
+        max-height: 360px;
         overflow: hidden;
       }
       .catalog-frame iframe {
-        /* Start almost collapsed, then expand after Drive has initialized.
-           This triggers Drive's own PDF fit calculation for the phone width. */
+        /* Give Drive a genuinely wider viewport on first load so its own
+           PDF renderer can fit the full page width. Scale the iframe back
+           into the phone-sized frame without touching the desktop rules. */
         display: block;
-        width: 1px;
-        max-width: none;
-        height: 58vh;
-        min-height: 420px;
-        max-height: 620px;
-        transform: none !important;
-        margin: 0;
+        width: 150% !important;
+        max-width: none !important;
+        height: 48vh !important;
+        min-height: 420px !important;
+        max-height: 540px !important;
+        transform: scale(0.6666667) !important;
+        transform-origin: top left !important;
+        margin: 0 !important;
       }
     }
 
@@ -130,23 +135,6 @@
       color: #d69a2d !important;
     }
   </style>
-  <script>
-    // Google Drive's PDF preview can incorrectly zoom to fill the iframe
-    // width on mobile. Initializing at 1px and expanding after its first load
-    // makes Drive recalculate the page fit without scaling the cross-origin frame.
-    function nkdealFitDrivePdfOnMobile(frame) {
-      if (!window.matchMedia || !window.matchMedia('(max-width: 600px)').matches) return;
-      requestAnimationFrame(function () {
-        frame.style.width = '100%';
-        requestAnimationFrame(function () {
-          frame.style.width = 'calc(100% - 0.1px)';
-          requestAnimationFrame(function () {
-            frame.style.width = '100%';
-          });
-        });
-      });
-    }
-  </script>
 </head>
 <body>
   <header class="site-header">
@@ -180,7 +168,7 @@
           <a class="button button-light" href="https://drive.google.com/file/d/1HvqymG_cubBVvsB7EMzcMhm5SAWxmM1-/view?usp=sharing" target="_blank" rel="noopener noreferrer">Open Catalog ↗</a>
         </div>
         <div class="catalog-frame">
-          <iframe src="https://drive.google.com/file/d/1HvqymG_cubBVvsB7EMzcMhm5SAWxmM1-/preview" title="NK Deal product catalog" allow="autoplay" onload="nkdealFitDrivePdfOnMobile(this)"></iframe>
+          <iframe src="https://drive.google.com/file/d/1HvqymG_cubBVvsB7EMzcMhm5SAWxmM1-/preview" title="NK Deal product catalog" allow="autoplay"></iframe>
         </div>
         <p class="catalog-note">For product availability, quantities and pricing, contact NK Deal directly.</p>
       </div>
