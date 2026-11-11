@@ -25,6 +25,7 @@
       width: 100%;
       padding: 0;
       overflow: hidden;
+      position: relative;
     }
     .catalog-frame iframe {
       display: block;
@@ -33,6 +34,10 @@
       min-height: 820px;
       margin: 0;
       border: 0;
+      /* Google Drive's embedded PDF preview ignores URL zoom hints.
+         Enlarge the viewer surface itself so the catalog page fills the frame. */
+      transform: scale(1.45);
+      transform-origin: center top;
     }
     @media (max-width: 900px) {
       .catalog-frame iframe {
