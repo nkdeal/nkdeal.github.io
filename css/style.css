@@ -219,6 +219,7 @@ h2 { font-size: clamp(40px, 5vw, 62px); line-height: 1.02; margin: 20px 0 0; fon
 @media (max-width: 600px) {
   .catalog-front { padding: 42px 0 58px; }
 <<<<<<< HEAD
+<<<<<<< HEAD
   .catalog-intro h1 {
     width: 100%;
     max-width: 100%;
@@ -229,6 +230,9 @@ h2 { font-size: clamp(40px, 5vw, 62px); line-height: 1.02; margin: 20px 0 0; fon
     word-break: normal;
   }
   .catalog-intro h1 span { white-space: normal; }
+=======
+  .catalog-intro h1 { font-size: clamp(38px, 11vw, 52px); line-height: 1; }
+>>>>>>> parent of f1a8779 (zoom fixes)
 =======
   .catalog-intro h1 { font-size: clamp(38px, 11vw, 52px); line-height: 1; }
 >>>>>>> parent of f1a8779 (zoom fixes)
