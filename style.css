@@ -252,3 +252,10 @@ h2 { font-size: clamp(40px, 5vw, 62px); line-height: 1.02; margin: 20px 0 0; fon
 .categories .category-grid .category-card .category-icon {
   color: var(--gold) !important;
 }
+
+/* Mobile page zoom reset: preserve 150% desktop scale, use native phone scale. */
+@media (max-width: 600px) {
+  html {
+    zoom: 1 !important;
+  }
+}
