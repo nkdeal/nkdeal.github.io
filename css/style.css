@@ -13,7 +13,7 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; zoom: 1.5; }
 body { margin: 0; font-family: 'DM Sans', sans-serif; color: var(--ink); background: var(--paper); }
 a { color: inherit; text-decoration: none; }
 .container { width: min(calc(100% - 48px), var(--max)); margin: 0 auto; }
@@ -168,6 +168,7 @@ h2 { font-size: clamp(40px, 5vw, 62px); line-height: 1.02; margin: 20px 0 0; fon
   .nav-wrap { height: 72px; }
   .hero { padding-top: 80px; }
   .hero-grid, .intro-grid, .contact-grid { grid-template-columns: 1fr; gap: 55px; }
+  .intro-grid > *, .contact-grid > * { min-width: 0; }
   .hero-panel { max-width: 620px; }
   .hero-bottom { margin-top: 55px; }
   .section-head { grid-template-columns: 1fr; gap: 20px; }
@@ -188,6 +189,7 @@ h2 { font-size: clamp(40px, 5vw, 62px); line-height: 1.02; margin: 20px 0 0; fon
   .hero-bottom { margin-top: 45px; }
   .intro, .categories, .catalog-section, .contact-section { padding: 80px 0; }
   .category-grid { grid-template-columns: 1fr; }
+  h2 { font-size: clamp(28px, 8vw, 36px); }
   .categories::before { background-size: auto 900px; }
   .category-card { min-height: 235px; }
   .catalog-head { align-items: flex-start; flex-direction: column; }
@@ -201,6 +203,12 @@ h2 { font-size: clamp(40px, 5vw, 62px); line-height: 1.02; margin: 20px 0 0; fon
 
 /* V3: catalog-first landing experience */
 .catalog-front { padding: 72px 0 86px; }
+/* Give the embedded catalog almost the full viewport width so Drive's
+   fit-to-width preview renders each PDF page much larger. */
+.catalog-front > .container {
+  width: min(calc(100% - 32px), 1700px);
+  max-width: 1700px;
+}
 .catalog-intro { text-align: center; max-width: 900px; margin: 0 auto 42px; }
 .catalog-intro h1 { font-family: Manrope, sans-serif; font-size: clamp(44px, 6vw, 78px); line-height: .98; letter-spacing: -.05em; margin: 22px 0 14px; font-weight: 800; }
 .catalog-intro h1 span { display: block; }
@@ -218,7 +226,7 @@ h2 { font-size: clamp(40px, 5vw, 62px); line-height: 1.02; margin: 20px 0 0; fon
 
 @media (max-width: 600px) {
   .catalog-front { padding: 42px 0 58px; }
-  .catalog-intro h1 { font-size: clamp(38px, 11vw, 52px); line-height: 1; }
+  .catalog-intro h1 { font-size: clamp(18px, 6vw, 24px); line-height: 1.08; letter-spacing: -.055em; }\n  .catalog-intro h1 span { white-space: nowrap; }
   .catalog-intro p { font-size: 15px; }
   .catalog-frame { padding: 3px; }
   .catalog-frame iframe { height: 68vh; min-height: 480px; }
